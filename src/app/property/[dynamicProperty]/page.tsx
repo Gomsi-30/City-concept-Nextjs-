@@ -104,9 +104,9 @@ const Home: React.FC<HomeProps> = ({ params }) => {
 
       <div className="text-center mt-8">
         <h2 className="text-xl font-bold">{property.Title}</h2>
-        <p className="text-gray-600">{property.Description}</p>
-        <p className="text-gray-600">{property.Address}</p>
-        <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500">
+        <p className="text-gray-600 font-medium text-lg mt-2">{property.Description}</p>
+        <p className="text-gray-600 mt-3">{property.Address}</p>
+        <button className="mt-5 px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500">
           Request for call back
         </button>
       </div>

@@ -3,7 +3,7 @@ import Logo from '../navbar/logo';
 
 const Footer = () => {
   return (
-    <footer className="mt-[100px] bg-blue-700 w-full p-6 md:p-10">
+    <footer className="mt-[100px] bg-blue-400 w-full p-6 md:p-10">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-13 items-center">
         {/* Logo and Description Section */}
         <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start text-center md:text-left">
