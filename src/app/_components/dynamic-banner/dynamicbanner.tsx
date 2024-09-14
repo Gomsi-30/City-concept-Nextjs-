@@ -45,15 +45,16 @@ const DynamicBanner = ({
                 <Share />
                 {articleNumber !== undefined && <div className="text-sm font-medium text-gray-500"><CreationDate articleNumber={articleNumber} /></div>}
                 {profileImage && (
-                <div className="w-7 h-7 relative">
-                <Image 
-                  src={`/articleassets/blogimages/${profileImage}`}
-                  alt="profile-image"
-                  fill
-                  className="object-cover object-center rounded-full"
-                />
-                </div>
-                )}
+  <div className="w-7 h-7 relative">
+    <Image 
+      src={`/articleassets/blogimages/${profileImage}.jpg`}  // Concatenate .jpg at the end
+      alt="profile-image"
+      fill
+      className="object-cover object-center rounded-full"
+    />
+  </div>
+)}
+
                 {profileName && <div className="hh font-regular font-medium text-gray-500">{profileName}</div>} 
               </div>
               </div>
