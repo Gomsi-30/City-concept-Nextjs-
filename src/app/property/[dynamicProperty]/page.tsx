@@ -105,8 +105,8 @@ const Home: React.FC<HomeProps> = ({ params }) => {
       <div className="text-center mt-8">
         <h2 className="text-xl font-bold">{property.Title}</h2>
         <p className="text-gray-600 font-medium text-lg mt-2">{property.Description}</p>
-        <p className="text-gray-600 mt-3">{property.Address}</p>
-        <button className="mt-5 px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500">
+        <p className="text-gray-600 mt-3 font-medium text-lg">{property.Address}</p>
+        <button className="mt-5 hh px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500">
           Request for call back
         </button>
       </div>
@@ -138,16 +138,16 @@ const Home: React.FC<HomeProps> = ({ params }) => {
           </p>
           <div className="grid grid-cols-2 gap-2">
             <div className="relative h-[200px] w-full">
-              <Image alt="" src="/articleassets/blogimages/15b.jpg" fill className="object-cover object-center rounded-md" />
+              <Image alt="" src="/articleassets/cityconcept21.jpg" fill className="object-cover object-center rounded-md" />
             </div>
             <div className="relative h-[200px] w-full">
-              <Image alt="" src="/articleassets/blogimages/15b.jpg" fill className="object-cover object-center rounded-md" />
+              <Image alt="" src="/articleassets/cityconcept22.jpg" fill className="object-cover object-center rounded-md" />
             </div>
             <div className="relative h-[200px] w-full">
-              <Image alt="" src="/articleassets/blogimages/15b.jpg" fill className="object-cover object-center rounded-md" />
+              <Image alt="" src="/articleassets/cityconcept23.jpg" fill className="object-cover object-center rounded-md" />
             </div>
             <div className="relative h-[200px] w-full">
-              <Image alt="" src="/articleassets/blogimages/15b.jpg" fill className="object-cover object-center rounded-md" />
+              <Image alt="" src="/articleassets/cityconcept24.jpg" fill className="object-cover object-center rounded-md" />
             </div>
             {/* More images... */}
           </div>
@@ -159,24 +159,25 @@ const Home: React.FC<HomeProps> = ({ params }) => {
       <div className="mt-[110px] w-full flex justify-start">
   <div className="w-2/3">
     <Header label="Reviews" center={false} />
-    <div className="container grid grid-cols-1 md:grid-cols-2 gap-5 mt-[50px]">
-      {[1, 2, 3, 4].map((i) => (
-        <div key={i} className="flex container flex-col p-4 shadow-sm rounded-lg gap-3">
-          <div className="relative h-16 w-16">
-            <Image
-              alt=""
-              src={`/articleassets/allproperties/${property[`Review_Image_${i}` as keyof Property]}`}
-              fill
-              className="rounded-full object-center object-cover"
-            />
-          </div>
-          <div className="flex flex-col gap-1">
-            <div className="font-semibold text-lg">{property[`Name_${i}` as keyof Property]}</div>
-            <div className="font-medium text-md line-clamp-2">{property[`Review_${i}` as keyof Property]}</div>
-          </div>
-        </div>
-      ))}
+    <div className="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-5 mt-[50px]">
+  {[1, 2, 3, 4].map((i) => (
+    <div key={i} className="flex w-full flex-col p-4 shadow-sm rounded-lg gap-3">
+      <div className="relative h-16 w-16">
+        <Image
+          alt=""
+          src={`/articleassets/allproperties/${property[`Review_Image_${i}` as keyof Property]}`}
+          fill
+          className="rounded-full object-center object-cover"
+        />
+      </div>
+      <div className="flex flex-col gap-1">
+        <div className="font-semibold text-lg">{property[`Name_${i}` as keyof Property]}</div>
+        <div className="font-medium text-md line-clamp-2">{property[`Review_${i}` as keyof Property]}</div>
+      </div>
     </div>
+  ))}
+</div>
+
   </div>
 </div>
 

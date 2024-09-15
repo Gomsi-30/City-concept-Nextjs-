@@ -10,11 +10,10 @@ type GridCardData = {
 };
 
 const ArticleCards = ({ data, path }: { data: GridCardData[], path?: string }) => {
-  // State to manage modal visibility and selected image
+ 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   
-  // Open modal with the clicked image
   const openModal = (imgUrl?: string) => {
     if (imgUrl) {
       setSelectedImg(imgUrl);

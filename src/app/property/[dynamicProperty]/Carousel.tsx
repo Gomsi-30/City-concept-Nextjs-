@@ -23,7 +23,6 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      {/* Display the current image */}
       <div className="relative h-[500px] w-full">
         <Image
           src={`/articleassets/allproperties/${images[currentIndex]}`}
@@ -33,18 +32,16 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         />
       </div>
 
-      {/* Previous Button */}
       <button
         onClick={goToPrevious}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+        className="absolute left-0 top-1/2 transform text-lg font-bold -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
       >
         &lt;
       </button>
 
-      {/* Next Button */}
       <button
         onClick={goToNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+        className="absolute right-0 top-1/2 transform text-lg font-bold -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
       >
         &gt;
       </button>
