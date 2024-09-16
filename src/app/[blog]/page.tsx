@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Header from '../_components/heading/header';
 import BlogCard from '../_components/blog-card/blogcard';
 
-interface Blog {
+type Blog = {
   title: string;
   contents: string[];
   imgUrl: string;

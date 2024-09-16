@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const segments = ['realestate', 'properties', 'marketnews', 'loan'];
 
-interface ArticleData {
+type ArticleData =  {
   title: string;
   contents: string[];
   imgUrl: string;
@@ -19,7 +19,7 @@ interface ArticleData {
   id?: number;
 }
 
-interface DynamicArticlesProps {
+type DynamicArticlesProps = {
   params: {
     dynamic: string;
   };

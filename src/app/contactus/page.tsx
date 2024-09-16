@@ -3,12 +3,7 @@
 import Link from 'next/link';
 import ContactForm from '../_components/contactus/contactus'
 
-
-
 const ContactUs = () => {
-  
-
-
 
   return (
     <div className="container flex flex-col gap-12">

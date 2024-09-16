@@ -4,8 +4,8 @@ import { allProperty } from '../../_components/data/allproperties';
 import GridCards from '../../_components/grid-card/gridcard';
 import SuspenseBoundary from '../../_components/SuspenseBoundary'; // Import the SuspenseBoundary component
 
-// Define the Property type
-interface Property {
+
+type Property =  {
   imgurl_1: string;
   Title: string;
   Starting_Price: string;
@@ -21,8 +21,8 @@ export const generateStaticParams = () => {
 
 export const generateMetadata = () => {
   return {
-    title: 'Blog Not Found',
-    description: 'No blog found for the given parameters',
+    title: 'Tools Not Found',
+    description: 'No tool found for the given parameters',
   };
 };
 

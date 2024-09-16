@@ -7,7 +7,7 @@ import Button from '../_components/button/button';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 
-interface Property {
+type Property =  {
   imgurl_1: string;
   Title: string;
   Starting_Price: string;

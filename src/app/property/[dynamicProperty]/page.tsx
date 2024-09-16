@@ -17,7 +17,7 @@ interface HomeProps {
   };
 }
 
-interface Property {
+type Property = {
   id?: number;
   Title?: string;
   imgurl_1?: string;
@@ -85,7 +85,7 @@ export const generateMetadata = ({ params }: { params: { dynamicProperty: string
   };
 };
 
-const Home: React.FC<HomeProps> = ({ params }) => {
+const Home = ({ params }:{params:{dynamicProperty:string}}) => {
   const { dynamicProperty } = params;
 
   const property: Property | undefined = allProperty.find(
