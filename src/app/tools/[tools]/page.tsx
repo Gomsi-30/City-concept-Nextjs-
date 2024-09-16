@@ -3,30 +3,40 @@ import Header from '../../_components/heading/header';
 import { allProperty } from '../../_components/data/allproperties';
 import GridCards from '../../_components/grid-card/gridcard';
 import SuspenseBoundary from '../../_components/SuspenseBoundary'; // Import the SuspenseBoundary component
+import { notFound } from 'next/navigation'; // Import notFound for 404 handling
 
-
-type Property =  {
+type Property = {
   imgurl_1: string;
   Title: string;
   Starting_Price: string;
-}
+};
 
-const segments = ['villa', 'flat', 'house','Villa', 'Flat', 'House'];
+const segments = ['villa', 'flat', 'house', 'Villa', 'Flat', 'House'];
 
 export const generateStaticParams = () => {
   return segments.map(segment => ({
-    tools: `${segment}`, 
+    tools: `${segment}`,
   }));
 };
 
-export const generateMetadata = () => {
-  return {
-    title: 'Tools Not Found',
-    description: 'No tool found for the given parameters',
-  };
+export const generateMetadata = ({ params }: { params: { tools: string } }) => {
+  const { tools } = params;
+  if (segments.includes(tools)) {
+    return {
+      title: `Calculate the Value of Your ${tools}`,
+      description: `Accurately estimate the value of your ${tools}.`,
+    };
+  } else {
+    return {
+      title: 'Tools Not Found',
+      description: 'No tool found for the given parameters',
+    };
+  }
 };
 
-const Tools = () => {
+const Tools = ({ params }: { params: { tools: string } }) => {
+  const { tools } = params;
+
   const random: Property[] = [];
   for (let i = 0; i < 3; i++) {
     random.push(allProperty[Math.floor(Math.random() * allProperty.length)]);
@@ -34,10 +44,10 @@ const Tools = () => {
 
   return (
     <div className='flex flex-col gap-12'>
-      <Header label='Calculate the Value of Your Flat' />
+      <Header label={`Calculate the Value of Your ${tools}`} />
       <div className='container'>
         <p className='text-lg px-[45px] sm:px-0'>
-          Whether you own a property or are looking to invest in a flat, independent house, or villa, our Price Calculator Tool helps you estimate the value accurately. Use this tool to get an instant valuation based on current market trends and property details.
+          Whether you own a property or are looking to invest in a {tools}, independent house, or villa, our Price Calculator Tool helps you estimate the value accurately. Use this tool to get an instant valuation based on current market trends and property details.
         </p>
       </div>
       <div className='container'>
@@ -47,7 +57,7 @@ const Tools = () => {
       </div>
       <Header label='How it works?' center={false} />
       <div className="container bg-white">
-        {/* Step 1 */}
+       
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-2">1. Select Property Type:</h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -65,7 +75,7 @@ const Tools = () => {
           </ul>
         </div>
 
-        {/* Step 3 */}
+       
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-2">3. Provide Property Details:</h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -76,7 +86,7 @@ const Tools = () => {
           </ul>
         </div>
 
-        {/* Step 4 */}
+      
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-2">4. View Estimated Value:</h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -92,7 +102,7 @@ const Tools = () => {
       </div>
 
       <GridCards data={random.map((property: Property) => ({
-        imgUrl: property.imgurl_1, // Adjust according to your needs
+        imgUrl: property.imgurl_1, 
         title: property.Title,
         money: property.Starting_Price
       }))} />
