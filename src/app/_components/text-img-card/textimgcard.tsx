@@ -13,7 +13,7 @@ const TextImageCard = () => {
         />
       </div>
 
-      <div className='md:w-1/2 text-base sm:text-xl font-semibold opacity-80'>
+      <div className='md:w-1/2  text-lg sm:text-xl font-semibold opacity-80'>
       At Cityconcept, we offer an extensive range of properties and advanced search tools tailored to your needs, ensuring a seamless and personalized experience. Our team of seasoned professionals provides expert insights and dedicated support, guiding you through every step of your real estate journey with integrity and excellence. Choose us to find your perfect home with confidence and ease.
       </div>
     </div>

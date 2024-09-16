@@ -5,18 +5,15 @@ const Footer = () => {
   return (
     <footer className="mt-[100px] bg-white border-t-[2px] w-full p-6 md:p-10">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-13 items-center">
-        {/* Logo and Description Section */}
-        <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start text-center md:text-left">
+        <div className="flex flex-col gap-5 md:gap-6 justify-center items-center md:items-start text-center md:text-left">
           <Logo />
           <p className="">We are here to provide the best facility for locations.</p>
           <div className="font-semibold ">
-            © 2024 Incb. All rights reserved.
+            © 2024 City-concept. All rights reserved.
           </div>
         </div>
 
-        {/* Links Section */}
-        <div className="grid grid-cols-3 sm:grid-cols-3 sm:gap-[85px] mt-[25px] w-full text-center md:text-left">
-          {/* Column 1 */}
+        <div className="grid grid-cols-3 sm:grid-cols-3 sm:gap-[85px] mt-[25px] w-full justify-center sm:px-0 text-left">
           <div>
             <ul className="space-y-2">
             <li>
@@ -70,7 +67,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3 */}
           <div>
             <ul className="space-y-2">
             <li>
@@ -79,7 +75,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/tools" className=" font-bold hover:underline">
+                <Link href="/tools/flat" className=" font-bold hover:underline">
                   Tools
                 </Link>
               </li>

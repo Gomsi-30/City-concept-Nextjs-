@@ -31,23 +31,21 @@ const DynamicBanner = ({
     <>
       {check === 'c' && (
         <div className="flex flex-col items-center gap-4">
-          {/* Heading */}
           <div className="">
-            <h1 className="hh text-3xl md:text-2xl lg:text-4xl xl:text-5xl text-center font-semibold max-w-screen-md">
+            <h1 className="hh text-3xl md:text-2xl lg:text-4xl xl:text-5xl font-semibold max-w-screen-md">
               {headingText}
             </h1>
           </div>
 
-          {/* Circle Image with Name and Date */}
           <div className={`${gap ? 'h-[40px] w-full' : 'md:px-[250px] container'} items-center flex relative flex-row  justify-between gap-2 mt-4`}>
             <div>
               <div className='flex flex-row items-center gap-4'>
-                <Share />
+                <Share articleTitle='headingText' />
                 {articleNumber !== undefined && <div className="text-sm font-medium text-gray-500"><CreationDate articleNumber={articleNumber} /></div>}
                 {profileImage && (
   <div className="w-7 h-7 relative">
     <Image 
-      src={`/articleassets/blogimages/${profileImage}.jpg`}  // Concatenate .jpg at the end
+      src={`/articleassets/blogimages/${profileImage}.jpg`}  
       alt="profile-image"
       fill
       className="object-cover object-center rounded-full"

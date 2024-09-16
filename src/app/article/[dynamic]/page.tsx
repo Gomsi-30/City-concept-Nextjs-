@@ -30,7 +30,7 @@ export const generateStaticParams = () => {
     const formattedTitle = title.replace(/[^A-Za-z0-9]+/g, "-");
 
     return segments.map(segment => ({
-      dynamic: `${segment}-${formattedTitle}`, 
+      dynamic: `${segment}-${formattedTitle}`,
     }));
   });
 };
@@ -80,7 +80,10 @@ const DynamicArticles = ({ params }: DynamicArticlesProps) => {
   const articleData = allarticledata.find(item => item.title.replace(/[^A-Za-z0-9]+/g, "-") === remainingParts);
   const data1 = loan
     .filter(item => item.title !== articleData?.title)
-    .slice(0, 4);
+    .slice(0, 6);
+    const data2 = loan
+    .filter(item => item.title !== articleData?.title)
+    .slice(4, 8);
 
   const updateHeadings = (articleData: ArticleData) => {
     articleData.contents = articleData.contents.map((content: string) => {
@@ -112,7 +115,7 @@ const DynamicArticles = ({ params }: DynamicArticlesProps) => {
                 profileName={articleData?.authorName}
                 articleImage={articleData?.imgUrl}
                 profileReadTime={articleData?.readTime}
-                articleNumber={articleData?.articleNumber} // Convert number to string if necessary
+                articleNumber={articleData?.articleNumber} 
               />
             </div>
             <div className="px-4 max-w-7xl mt-[10px]">
@@ -144,14 +147,14 @@ const DynamicArticles = ({ params }: DynamicArticlesProps) => {
             </div>
           </div>
           <div className='w-full md:w-[30%] flex flex-col gap-1 mt-10 md:mt-0'>
-            <h1 className='hh text-2xl font-semibold'>What's More</h1>
-            <BlogCard2 extra='loan' data={data1} showContent={false} />
+            <h1 className='hh text-2xl font-semibold'>What&apos;s More</h1>
+            <BlogCard2 extra='loan' data={data2} showContent={false} />
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className='w-full'>
-            <h1 className='hh text-2xl font-semibold'>What's More</h1>
+        <div className='w-full flex flex-col gap-3'>
+            <h1 className='hh text-3xl font-semibold'>Must Read</h1>
             <BlogCard2 extra='loan' data={data1} showContent={false} />
           </div>
         <ContactForm />

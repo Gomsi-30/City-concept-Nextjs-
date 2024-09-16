@@ -5,8 +5,8 @@ import Footer from "./_components/footer/footer";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cityconcept.netlify.app"),
-  title: { default: "CC", template: `%s | InCb` },
+  metadataBase: new URL("https://cityconcept.netlify.app/"),
+  title: { default: "City-concept", template: `%s | City-concept` },
   description: "City-concept.",
   openGraph: {
     url: "/",

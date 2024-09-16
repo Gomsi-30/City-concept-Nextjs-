@@ -6,7 +6,7 @@ type GridCardData = {
   articleNumber: number;
   imgUrl: string;
   Title?: string;
-  Starting_Price?: string; // Added this to the type
+  Starting_Price?: string; 
   author?: string;
   authorImage?: string;
   readTime?: string;

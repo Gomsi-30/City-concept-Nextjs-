@@ -15,7 +15,7 @@ const ArticleNavbar = () => {
                 <Link className={`${path.startsWith('re') ? 'font-bold underline' : ''}`} href='/article/realestate'>Real Estate</Link>
                 <Link className={`${path.startsWith('pr') ? 'font-bold underline' : ''}`} href='/article/properties'>Properties</Link>
                 <Link className={`${path.startsWith('ma') ? 'font-bold underline' : ''}`} href='/article/marketnews'>Market News</Link>
-                <Link className={`${path.startsWith('lo') ? 'font-bold underline' : ''}`} href='/article/loan' className='sm:ml-5'>Loan</Link>
+                <Link className={`sm:ml-5 ${path.startsWith('lo') ? 'font-bold underline' : ''}`} href='/article/loan' >Loan</Link>
                
             </div>
             <div>

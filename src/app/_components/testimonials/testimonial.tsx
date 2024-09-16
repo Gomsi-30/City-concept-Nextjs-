@@ -22,7 +22,7 @@ const Testimonial = ({ data }: { data: TestimonialData[] }) => {
           </div>
           <div className='flex flex-col items-center gap-1'>
             <div className='font-semibold text-lg'>{author}</div>
-            <div className='font-medium text-md text-center line-clamp-2'>{title}</div>
+            <div className='font-regular text-md text-center'>{title}</div>
           </div>
         </div>
       ))}

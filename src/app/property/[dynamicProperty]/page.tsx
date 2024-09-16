@@ -11,12 +11,6 @@ import RequestCallbackPopup from './RequestCallbackPopup';
 
 const Carousel = dynamic(() => import('./Carousel'), { ssr: false });
 
-interface HomeProps {
-  params: {
-    dynamicProperty: string;
-  };
-}
-
 type Property = {
   id?: number;
   Title?: string;
@@ -101,7 +95,7 @@ const Home = ({ params }:{params:{dynamicProperty:string}}) => {
   let a = [];
   const getRandomProperties = () => {
     const shuffled = allProperty.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 4).map((property: Property) => ({
+    const selected = shuffled.slice(0, 6).map((property: Property) => ({
       imgUrl: property.imgurl_1,
       title: property.Title,
       money: property.Starting_Price
@@ -162,50 +156,50 @@ const Home = ({ params }:{params:{dynamicProperty:string}}) => {
             </div>
           </div>
         </div>
-        <div className="md:w-[80%] mt-[25px] sticky">
+        <div className="w-[80%] mt-[25px] sticky">
           <ContactForm />
         </div>
       </div>
       <div className='mt-[110px]' >
       <Header label="Reviews" center={false}  />
       </div>
-      <div className="container w-full flex flex-row">
-      <div className="md:w-[50%]">
+      <div className="container h-full w-full flex flex-row">
+        <div className="w-[110%] lg:w-[100%]">
     
-    <div className="grid grid-cols-1 sm:grid-cols-1 h-[40%] mt-[50px]">
-  {[1, 2, 3, 4].map((i) => (
-    <div key={i} className="flex md:w-2/2 flex-col p-4 shadow-lg rounded-lg gap-3 sm:items-center">
-      <div className="relative h-12 w-12">
-        <Image
-          alt=""
-          src={`/articleassets/allproperties/${property[`Review_Image_${i}` as keyof Property]}`}
-          fill
-          className="rounded-full object-center object-cover"
-        />
-      </div>
-      <div className="flex flex-col gap-1 text-center sm:text-center">
-        <div className="font-semibold text-xl md:text-lg">{property[`Name_${i}` as keyof Property]}</div>
-        <div className="font-medium texl-xl md:text-md">{property[`Review_${i}` as keyof Property]}</div>
-      </div>
-    </div>
-  ))}
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-4 mt-[10px]">
+              {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex md:w-2/2 flex-col p-4 shadow-lg rounded-lg gap-3 items-center">
+                    <div className="relative h-12 w-12">
+                       <Image
+                        alt=""
+                        src={`/articleassets/allproperties/${property[`Review_Image_${i}` as keyof Property]}`}
+                        fill
+                        className="rounded-full object-center object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-col gap-1 text-center sm:text-center">
+                        <div className="font-bold text-xl md:text-lg">{property[`Name_${i}` as keyof Property]}</div>
+                        <div className="font-regular texl-xl md:text-md">{property[`Review_${i}` as keyof Property]}</div>
+                   </div>
+              </div>
+          ))}
+          </div>
+     </div>
 </div>
-
-
-</div>
-<div className='mt-[-40px] flex flex-col gap-6'>
-<Header label="More Properties" center={false}  />
-   <GridCards data={a} grid={false} />
-</div>
-</div>
-
 
       <Helper />
-      <div className="mt-[90px] flex-col flex gap-5">
+      <div className=" mt-[90px] flex-col flex gap-5">
         <Header label="Description" center={false} />
-        <p className="container text-lg font-medium pr-[320px] lg:pr-[500px] xl:pr-[630px]">
+        <div className='container'>
+        <p className="text-lg font-medium pr-[40px]">
         {property.About}
         </p>
+        </div>
+      </div>
+
+      <div className='mt-[50px] lg:flex flex-col gap-4'>
+        <Header label="More Properties" center={false}  />
+        <GridCards data={a} />
       </div>
     </div>
   );

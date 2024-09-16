@@ -11,7 +11,6 @@ import {testimonials} from './_components/data/testimonials'
 import Testimonial from './_components/testimonials/testimonial'
 import ContactForm from './_components/contactus/contactus'
 
-
 type Property =  {
   id?: number;
   Title?: string;

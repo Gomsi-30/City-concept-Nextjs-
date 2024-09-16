@@ -8,11 +8,11 @@ export const testimonials = [
     },
     {
         imgUrl: '/articleassets/Emily Davis.webp',
-        author: 'Brock Lesner',
+        author: 'Emily Davis',
         title: `"Thanks to Cityconcept, I found an amazing house in Los Angeles. The detailed listings and helpful search filters allowed me to explore options in my price range effortlessly. A must-use for anyone serious about finding a home!"`
     },
     {
-        imgUrl: '/articleassets/john.webp',
+        imgUrl: '/articleassets/test-2.jpg',
         author: 'Michael Turner',
         title: `"I was searching for a property in Miami and Cityconcept came through with excellent recommendations. Their vast database of houses and flats made it easy to compare and find the ideal place. Highly satisfied!"`
     }

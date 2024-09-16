@@ -26,15 +26,15 @@ const Articles = () => {
 
           
           <div className='w-full sm:w-[30%] flex flex-col gap-1 mt-10 sm:mt-0'>
-            <h1 className='hh text-2xl font-semibold'>What's More</h1>
+            <h1 className='hh text-2xl font-semibold'>What&apos;s More</h1>
             <BlogCard2 data={data1} section='properties' showContent={false} />
           </div>
         </div>
 
        
       
-          <div className='w-full'>
-            <h1 className='hh text-2xl font-semibold'>Must Read</h1>
+          <div className='w-full flex flex-col gap-3'>
+            <h1 className='hh text-3xl font-semibold'>Must Read</h1>
             <BlogCard2 data={data2} section='marketnews' showContent={false} />
           </div>
           <ContactForm />

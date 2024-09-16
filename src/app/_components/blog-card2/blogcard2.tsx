@@ -32,7 +32,7 @@ const BlogCard2 = ({ data, section, extra, showContent = true }: GridDataProps &
       {data.map(({ imgUrl, title, articleNumber, contents }) => (
         <Link
           key={articleNumber}
-          href={`/${extra ? extra : section}-${title?.replace(/[^A-Za-z0-9]+/g, '-')}`}
+          href={`${extra ? extra : section}-${title?.replace(/[^A-Za-z0-9]+/g, '-')}`}
         >
           <div className="flex flex-col h-full w-full max-w-full cursor-pointer overflow-hidden">
             <div className="relative w-full h-64 sm:h-48 md:h-56 lg:h-64">

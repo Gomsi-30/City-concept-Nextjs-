@@ -1,5 +1,5 @@
 'use client';
-import { Metadata } from 'next';
+
 import { useSearchParams } from 'next/navigation';
 import GridCards from '../_components/grid-card/gridcard';
 import { useEffect, useState, Suspense } from 'react';
@@ -7,11 +7,8 @@ import Search from '../_components/simplecard/search';
 import Header from '../_components/heading/header';
 import { allProperty } from '../_components/data/allproperties';
 
-export const metadata: Metadata = {
-  title: "Properties",
-};
 
-interface Property {
+type Property = {
   Location: string;
   Property_Type: string;
   imgurl_1: string;
@@ -70,9 +67,8 @@ const PropertyPage: React.FC = () => {
           <div className='flex justify-center text-red-500 text-md font-bold'>No properties found.</div>
         )}
         
-        {/* New section for random properties */}
-        <div className='mt-12'>
-          <Header label='What’s More' />
+        <div className='mt-12 flex flex-col gap-3'>
+          <Header label='More Properties for you' />
           <GridCards data={randomProperties} />
         </div>
       </div>

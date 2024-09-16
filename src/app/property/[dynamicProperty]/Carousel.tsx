@@ -23,12 +23,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <div className="relative h-[500px] w-full">
+      <div className="relative h-[510px] w-full">
         <Image
           src={`/articleassets/allproperties/${images[currentIndex]}`}
           alt={`Image ${currentIndex + 1}`}
           fill
-          className="object-cover rounded-lg"
+          className="object-fit object-center rounded-lg"
         />
       </div>
 

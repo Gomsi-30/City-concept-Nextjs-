@@ -15,16 +15,16 @@ const Share = ({check=true,articleTitle}:a) => {
       // sectionName = sectionName.replace(/[^A-Za-z0-9]+/g, "-").toLowerCase();
   return (
     <div className='hidden lg:flex flex-row gap-2 items-center text-xl'>
-      <TwitterShareButton url={`https://jeniy.us/${articleTitle}`}>
+      <TwitterShareButton url={`https://cityconcept.netlify.app/${articleTitle}`}>
             <FaSquareXTwitter  className={`text-gray-500 transition-all ease-in-out ${check ? 'hover:text-black' : 'hover:text-white'} `}/>
       </TwitterShareButton>
-      <LinkedinShareButton url={`https://jeniy.us/${articleTitle}`}>
+      <LinkedinShareButton url={`https://cityconcept.netlify.app/${articleTitle}`}>
             <FaLinkedin  className={`text-gray-500 transition-all ease-in-out ${check ? 'hover:text-black' : 'hover:text-white'} `}/>
       </LinkedinShareButton>
-      <InstapaperShareButton url={`https://jeniy.us/${articleTitle}`}>
+      <InstapaperShareButton url={`https://cityconcept.netlify.app/${articleTitle}`}>
             <FaSquareInstagram  className={`text-gray-500 transition-all ease-in-out ${check ? 'hover:text-black' : 'hover:text-white'} `}/>
       </InstapaperShareButton>
-      <FacebookShareButton url={`https://jeniy.us/${articleTitle}`}>
+      <FacebookShareButton url={`https://cityconcept.netlify.app/${articleTitle}`}>
             <FaSquareFacebook  className={`text-gray-500 transition-all ease-in-out ${check ? 'hover:text-black' : 'hover:text-white'} `}/>
       </FacebookShareButton>
     </div>

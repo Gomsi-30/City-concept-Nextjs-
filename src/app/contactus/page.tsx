@@ -1,4 +1,3 @@
-"use client";
 
 import Link from 'next/link';
 import ContactForm from '../_components/contactus/contactus'
@@ -24,15 +23,13 @@ const ContactUs = () => {
            
             <h2 className="text-2xl hh font-bold">Address</h2>
             <Link href="mailto:info@example.com" >
-              <p className="text-sm font-semibold text-blue-600 hover:underline">Edificio Parque Oceano
-Rua Dr. José Joaquim Almeida, N. 2 - 3 E,
-2780-322 Oeiras, Portugal</p>
+              <p className="text-sm font-semibold text-blue-600 hover:underline">75 3rd Ave, New York, NY 10003, USA</p>
             </Link>
           </div>
           <div>
             <h2 className="text-2xl hh font-bold">Phone:</h2>
            
-              <p className="text-sm font-semibold text-blue-600 hover:underline">+ 351 21 114 24 96</p>
+              <p className="text-sm font-semibold text-blue-600 hover:underline">+1(209)237-0450</p>
            
           </div>
 
