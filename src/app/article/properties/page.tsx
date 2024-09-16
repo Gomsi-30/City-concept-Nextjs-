@@ -3,7 +3,11 @@ import { properties } from '../../_components/data/properties';
 import ContactForm from '../../_components/contactus/contactus'
 import { market } from '../../_components/data/marketnews';
 import { loan } from '../../_components/data/loan';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Property",
+};
 const Articles = () => {
   const data = properties.slice(0, 8);
   const data1 = market.slice(0,4); 

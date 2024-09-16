@@ -1,5 +1,11 @@
 import AboutSection from '../_components/aboutus/aboutus'
 import ContactForm from '../_components/contactus/contactus'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Services",
+};
+
 const Services = () => {
   return (
     <div className='container'>

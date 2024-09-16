@@ -129,7 +129,7 @@ const BlogDynamicPage = ({ params }: { params: { blog: string } }) => {
       
       <div className='mt-[70px] flex flex-col gap-10'>
         <Header label='Must Read' />
-        <BlogCard data={randomBlogData} /> {/* Render random blogs excluding the current blog */}
+        <BlogCard data={randomBlogData} /> 
       </div>
     </div>
   );

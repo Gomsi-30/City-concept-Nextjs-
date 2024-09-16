@@ -4,7 +4,11 @@ import { market } from '../../_components/data/marketnews';
 import ContactForm from '../../_components/contactus/contactus'
 import { properties } from '../../_components/data/properties';
 import { real } from '../../_components/data/real';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Market News",
+};
 const Articles = () => {
 
   const data = market.slice(0, 8);

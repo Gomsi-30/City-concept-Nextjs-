@@ -6,12 +6,18 @@ import GridCards from '../_components/grid-card/gridcard';
 import Button from '../_components/button/button';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
+import { Metadata } from 'next';
 
 type Property =  {
   imgurl_1: string;
   Title: string;
   Starting_Price: string;
 }
+
+export const metadata: Metadata = {
+  title: "Calculate Price Tools",
+};
+
 
 const formatPrice = (price: number): string => {
   if (price >= 1000000) {

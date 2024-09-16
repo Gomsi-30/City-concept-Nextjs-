@@ -12,7 +12,7 @@ import Testimonial from './_components/testimonials/testimonial'
 import ContactForm from './_components/contactus/contactus'
 
 
-interface Property {
+type Property =  {
   id?: number;
   Title?: string;
   imgurl_1?: string;
@@ -42,7 +42,7 @@ interface Property {
   About?:string;
 }
 
-interface Loan {
+type Loan = {
   imgUrl?:string;
   title?:string;
 }

@@ -1,3 +1,9 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Privacy",
+};
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen py-10 px-6 lg:px-20">

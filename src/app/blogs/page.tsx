@@ -1,7 +1,11 @@
 import Header from '../_components/heading/header';
 import { blogData } from '../_components/data/blog-data';
 import BlogCard from '../_components/blog-card/blogcard';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Blogs",
+};
 const Blog = () => {
   return (
     <div className="px-4 py-8">

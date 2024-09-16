@@ -1,4 +1,8 @@
-// components/TermsAndConditions.js
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Disclaimer",
+};
 export default function Disclaimer() {
     return (
       <div className="bg-white p-8 max-w-4xl mx-auto">

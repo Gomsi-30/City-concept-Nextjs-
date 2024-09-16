@@ -7,10 +7,10 @@ type GridCardData = {
   money?: string;
 };
 
-const GridCards = ({ data }: { data: GridCardData[] }) => {
+const GridCards = ({ data,grid=true }: { data: GridCardData[],grid:boolean }) => {
   return (
     <div className='container'>
-      <div className='mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4'>
+      <div className={`mx-auto grid ${grid ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 p-4' : 'grid-cols-2 w-[130%] gap-5' }`}>
         {data.map(({ imgUrl, title, money }, index) => (
           <Link key={index} href={`/property/${title?.replace(/[^A-Za-z0-9]+/g, "-")}`} className='block'>
             <div

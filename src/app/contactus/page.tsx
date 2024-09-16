@@ -2,7 +2,11 @@
 
 import Link from 'next/link';
 import ContactForm from '../_components/contactus/contactus'
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Contact Us",
+};
 const ContactUs = () => {
 
   return (

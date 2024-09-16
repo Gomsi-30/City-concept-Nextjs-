@@ -1,11 +1,15 @@
 'use client';
-
+import { Metadata } from 'next';
 import { useSearchParams } from 'next/navigation';
 import GridCards from '../_components/grid-card/gridcard';
 import { useEffect, useState, Suspense } from 'react';
 import Search from '../_components/simplecard/search';
 import Header from '../_components/heading/header';
 import { allProperty } from '../_components/data/allproperties';
+
+export const metadata: Metadata = {
+  title: "Properties",
+};
 
 interface Property {
   Location: string;

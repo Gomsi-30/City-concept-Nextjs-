@@ -1,7 +1,11 @@
 import AboutSection from '../_components/aboutus/aboutus'
 import ContactForm from '../_components/contactus/contactus'
 import ArticleCards from '../_components/article-card/articlecard'
-// import Header from '../_components/heading/header'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About us",
+};
 const About = () => {
   const data=[
     {imgUrl:'cityconcept1.jpg'},{imgUrl:'cityconcept2.jpg'},{imgUrl:'cityconcept3.jpg'},{imgUrl:'cityconcept4.jpg'},{imgUrl:'cityconcept5.jpg'},{imgUrl:'cityconcept6.jpg'},{imgUrl:'cityconcept7.jpg'},{imgUrl:'cityconcept8.jpg'},{imgUrl:'cityconcept9.jpg'}]

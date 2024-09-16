@@ -1,5 +1,10 @@
 import ContactForm from '../_components/contactus2/contactus2'
 import Header from '../_components/heading/header'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Career",
+};
 const ContactPage = ()=> {
     return (
         <div className='container'>
