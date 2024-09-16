@@ -18,10 +18,10 @@ export const SimpleCard = () => {
         </div>
 
   
-        <div className="relative w-full xl:w-1/2 h-64 md:h-80 lg:h-96">
+        <div className="relative w-full xl:w-1/2 h-64 md:h-80 lg:h-88">
           <Image
             alt="Banner"
-            src="/articleassets/blogimages/6.jpg"
+            src="/articleassets/1.jpg"
             fill
             className="object-cover rounded-md shadow-md"
           />

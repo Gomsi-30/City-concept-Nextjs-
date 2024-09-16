@@ -13,18 +13,35 @@ interface Property {
   Starting_Price: string;
 }
 
+const formatPrice = (price: number): string => {
+  if (price >= 1000000) {
+    return `$${(price / 1000000).toFixed(1)} million`;
+  }
+  return `$${price.toLocaleString()}`;
+};
+
 const Tools = () => {
   const searchParams = useSearchParams();
-  const path = searchParams.get('path') || 'property'; // Default value if `path` is null
+  const path = searchParams.get('path') || 'property';
 
   const getRandomNumber = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const less = getRandomNumber(20000, 510000);
-  const greater = getRandomNumber(510000, 1000000);
+  let less = 0;
+  let greater = 0;
 
-  // Generate a list of random properties
+  if (path.startsWith('V')) {
+    less = getRandomNumber(250000, 2500000); 
+    greater = getRandomNumber(5000000, 10000000); 
+  } else if (path.startsWith('F')) {
+    less = getRandomNumber(50000, 500000); 
+    greater = getRandomNumber(1000000, 2000000); 
+  } else if (path.startsWith('H')) {
+    less = getRandomNumber(75000, 500000); 
+    greater = getRandomNumber(500000, 1500000); 
+  }
+
   const random: Property[] = [];
   for (let i = 0; i < 3; i++) {
     const randomProperty = allProperty[Math.floor(Math.random() * allProperty.length)];
@@ -48,13 +65,13 @@ const Tools = () => {
         <div className='flex flex-row justify-around'>
           <div className='flex flex-col gap-5'>
             <div className='rounded-md p-4 flex items-center justify-center text-2xl font-bold bg-blue-500 text-white'>
-              ${less}
+              {formatPrice(less)}
             </div>
             <h1 className='hh text-1xl'>With less amenities</h1>
           </div>
           <div className='flex flex-col gap-5'>
             <div className='rounded-md p-4 flex items-center justify-center text-2xl font-bold bg-blue-500 text-white'>
-              ${greater}
+              {formatPrice(greater)}
             </div>
             <h1 className='hh text-1xl'>With more amenities</h1>
           </div>

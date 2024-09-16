@@ -15,7 +15,7 @@ const config: Config = {
         DEFAULT:'1rem',
         sm: '2rem',     
         md: '2rem',     
-        lg: '8rem',     
+        lg: '6rem',     
         xl: '8rem',     
         '2xl': '8rem',
       },

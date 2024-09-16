@@ -1,19 +1,20 @@
 import DynamicBanner from '../_components/dynamic-banner/dynamicbanner';
 import { blogData } from '../_components/data/blog-data';
 import Image from 'next/image';
+import Header from '../_components/heading/header';
+import BlogCard from '../_components/blog-card/blogcard';
 
 interface Blog {
-    title: string;
-    contents: string[];
-    imgUrl: string;
-    authorName: string;
-    readTime: string;
-    articleNumber: number; 
-    authorImg?: string; 
-    Date?: string;
-    articleId?: number;
-  }
-  
+  title: string;
+  contents: string[];
+  imgUrl: string;
+  authorName: string;
+  readTime: string;
+  articleNumber: number;
+  authorImg?: string;
+  Date?: string;
+  articleId?: number;
+}
 
 export const generateStaticParams = () => {
   return blogData.map(({ title }) => ({
@@ -58,6 +59,17 @@ const BlogDynamicPage = ({ params }: { params: { blog: string } }) => {
   const articleData: Blog | undefined = blogData.find(item =>
     item.title.replace(/[^A-Za-z0-9]+/g, "-") === blog
   );
+
+
+  const getRandomItems = (arr: Blog[], num: number) => {
+    const filteredArr = arr.filter(
+      (item) => item.title.replace(/[^A-Za-z0-9]+/g, "-") !== blog
+    ); 
+    const shuffled = filteredArr.sort(() => 0.5 - Math.random()); 
+    return shuffled.slice(0, num); 
+  };
+
+  const randomBlogData = getRandomItems(blogData, 6);
 
   const updateHeadings = (article: Blog) => {
     article.contents = article.contents.map(content => {
@@ -113,6 +125,11 @@ const BlogDynamicPage = ({ params }: { params: { blog: string } }) => {
             <p className="text-sm text-gray-500">Loading...</p>
           )}
         </div>
+      </div>
+      
+      <div className='mt-[70px] flex flex-col gap-10'>
+        <Header label='Must Read' />
+        <BlogCard data={randomBlogData} /> {/* Render random blogs excluding the current blog */}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Helper from '@/app/_components/article/helpertoo';
 
 // Component to handle carousel functionality on the client-side
 import dynamic from 'next/dynamic';
+import RequestCallbackPopup from './RequestCallbackPopup';
 
 // Dynamically load the carousel component to ensure it runs client-side
 const Carousel = dynamic(() => import('./Carousel'), { ssr: false });
@@ -99,16 +100,13 @@ const Home: React.FC<HomeProps> = ({ params }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Carousel - handled on client side */}
       <Carousel images={images} />
 
       <div className="text-center mt-8">
         <h2 className="text-xl font-bold">{property.Title}</h2>
-        <p className="text-gray-600 font-medium text-lg mt-2">{property.Description}</p>
+        <p className="md:px-[120px] lg:px-[230px] text-gray-600 font-medium text-lg mt-2">{property.Description}</p>
         <p className="text-gray-600 mt-3 font-medium text-lg">{property.Address}</p>
-        <button className="mt-5 hh px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500">
-          Request for call back
-        </button>
+        <RequestCallbackPopup />
       </div>
 
       <div className="bg-blue-600 w-full mt-[50px]">
@@ -130,11 +128,11 @@ const Home: React.FC<HomeProps> = ({ params }) => {
         </div>
       </div>
 
-      <div className="mt-[100px] container gap-10 w-full flex flex-col lg:flex-row items-center lg:justify-between">
-        <div className="flex flex-col gap-5 lg:w-[75%]">
+      <div className="mt-[100px] container gap-12 w-full flex flex-col lg:flex-row items-center lg:justify-between">
+        <div className="flex flex-col gap-5 lg:w-[86%]">
           <h1 className="hh text-4xl">About Us</h1>
-          <p className="text-lg font-regular">
-            Luxury living in Gurugram has increasingly become a preferred choice for NRIs, drawn by its robust economy, top-tier infrastructure, and exquisite lifestyle offerings...
+          <p className="text-md font-medium">
+            {property.About}
           </p>
           <div className="grid grid-cols-2 gap-2">
             <div className="relative h-[200px] w-full">
@@ -149,20 +147,19 @@ const Home: React.FC<HomeProps> = ({ params }) => {
             <div className="relative h-[200px] w-full">
               <Image alt="" src="/articleassets/cityconcept24.jpg" fill className="object-cover object-center rounded-md" />
             </div>
-            {/* More images... */}
           </div>
         </div>
-        <div className="lg:w-[85%] mt-[25px]">
+        <div className="lg:w-[80%] mt-[25px] sticky">
           <ContactForm />
         </div>
       </div>
-      <div className="mt-[110px] w-full flex justify-start">
-  <div className="w-2/3">
+      <div className="container mt-[110px] w-full flex">
+  <div className=" w-[50%]">
     <Header label="Reviews" center={false} />
-    <div className="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-5 mt-[50px]">
+    <div className=" grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-2 mt-[50px]">
   {[1, 2, 3, 4].map((i) => (
-    <div key={i} className="flex w-full flex-col p-4 shadow-sm rounded-lg gap-3">
-      <div className="relative h-16 w-16">
+    <div key={i} className="flex w-2/2 flex-col p-4 shadow-lg rounded-lg gap-3 sm:items-center">
+      <div className="relative h-12 w-12">
         <Image
           alt=""
           src={`/articleassets/allproperties/${property[`Review_Image_${i}` as keyof Property]}`}
@@ -170,13 +167,14 @@ const Home: React.FC<HomeProps> = ({ params }) => {
           className="rounded-full object-center object-cover"
         />
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 text-center sm:text-center">
         <div className="font-semibold text-lg">{property[`Name_${i}` as keyof Property]}</div>
         <div className="font-medium text-md line-clamp-2">{property[`Review_${i}` as keyof Property]}</div>
       </div>
     </div>
   ))}
 </div>
+
 
   </div>
 </div>
@@ -185,8 +183,8 @@ const Home: React.FC<HomeProps> = ({ params }) => {
       <Helper />
       <div className="mt-[90px] flex-col flex gap-5">
         <Header label="Description" center={false} />
-        <p className="container text-lg font-regular">
-          Luxury living in Gurugram has increasingly become a preferred choice for NRIs, drawn by its robust economy, top-tier infrastructure...
+        <p className="container text-lg font-regular pr-[320px] lg:pr-[500px] xl:pr-[600px]">
+        {property.Description}
         </p>
       </div>
     </div>

@@ -36,10 +36,10 @@ const BlogCard = ({ data }: gridData) => {
               />
             </div>
             <div className='flex flex-col gap-2 py-4'>
-              <p className='text-xs sm:text-sm md:text-md lg:text-lg font-semibold text-gray-700'>
+              <p className='text-xs sm:text-sm  font-regular text-gray-700'>
                 <CreationDate articleNumber={articleNumber} />
               </p>
-              <p className='text-lg sm:text-lg md:text-lg lg:text-lg  font-bold sm:font-semibold text-gray-900'>
+              <p className='line-clamp-2 text-lg sm:text-lg lg:text-xl font-bold sm:font-semibold '>
                 {title}
               </p>
               <p className='text-lg sm:text-lg md:text-lg lg:text-md font-regular text-gray-600 line-clamp-3'>

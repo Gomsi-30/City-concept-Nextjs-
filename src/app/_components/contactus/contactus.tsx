@@ -53,7 +53,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className=" min-h-screen flex justify-center items-center">
+    <div className=" flex justify-center items-center">
       <Toaster />
       <div className="bg-blue-500 p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-center text-2xl font-bold mb-8 text-white">Get in touch with us</h2>

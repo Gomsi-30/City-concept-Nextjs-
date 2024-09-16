@@ -57,7 +57,6 @@ const Tools = () => {
           </ul>
         </div>
 
-        {/* Step 2 */}
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-2">2. Enter Location:</h2>
           <ul className="list-disc pl-6 space-y-2">

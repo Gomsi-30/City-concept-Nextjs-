@@ -49,7 +49,7 @@ const ArticleCards = ({ data, path }: { data: GridCardData[], path?: string }) =
                     )}
                   </div>
                   <div className="p-4">
-                    <p className="text-md sm:text-lg font-medium">{title}</p>
+                    <p className="text-md sm:text-xl font-semibold hh">{title}</p>
                   </div>
                 </div>
               </Link>

@@ -80,7 +80,7 @@ const DynamicArticles = ({ params }: DynamicArticlesProps) => {
   const articleData = allarticledata.find(item => item.title.replace(/[^A-Za-z0-9]+/g, "-") === remainingParts);
   const data1 = loan
     .filter(item => item.title !== articleData?.title)
-    .slice(0, 3);
+    .slice(0, 4);
 
   const updateHeadings = (articleData: ArticleData) => {
     articleData.contents = articleData.contents.map((content: string) => {
@@ -144,12 +144,16 @@ const DynamicArticles = ({ params }: DynamicArticlesProps) => {
             </div>
           </div>
           <div className='w-full md:w-[30%] flex flex-col gap-1 mt-10 md:mt-0'>
-            <h1 className='hh text-2xl font-semibold'>Whats More</h1>
+            <h1 className='hh text-2xl font-semibold'>What's More</h1>
             <BlogCard2 extra='loan' data={data1} showContent={false} />
           </div>
         </div>
 
         {/* Contact Form */}
+        <div className='w-full'>
+            <h1 className='hh text-2xl font-semibold'>What's More</h1>
+            <BlogCard2 extra='loan' data={data1} showContent={false} />
+          </div>
         <ContactForm />
       </div>
     </div>

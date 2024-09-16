@@ -42,13 +42,11 @@ Rua Dr. José Joaquim Almeida, N. 2 - 3 E,
             <div className='mt-4 am:mt-0 flex flex-col  sm:flex-row sm:gap-5'>
                     <h2 className="text-xl font-bold">Main:</h2>
                     <Link href="info@starsinsider.com" className='underline'>
-                    info@starsinsider.com
+                    info@cityconcept.com
                     </Link>
             </div>
             <div className='flex flex-col  sm:flex-row sm:gap-5'>
-                    <h2 className="text-xl font-bold">Advertising:</h2>
-                
-                    <Link href="advertising@starsinsider.com"  className='underline'>advertising@starsinsider.com</Link>
+                   
                 </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 import Image from "next/image";
 
 type LogoProps = {
@@ -8,7 +8,9 @@ type LogoProps = {
 const Logo = ({label='/logo.png'}:LogoProps) => {
     return ( 
     <>
-     <Image src={label} alt='logo' height={70} width={70} className='text-white' />
+      <Link href='/'>
+          <Image src={label} alt='logo' height={130} width={130} className='text-white' />
+      </Link>
     </> 
     );
 }

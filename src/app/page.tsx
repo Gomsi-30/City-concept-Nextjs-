@@ -85,7 +85,7 @@ export default function Home() {
        <GridCards data={a} />
        </div>
 
-       <Button label='Browse All' />
+       <Button label='Browse All' link='/property' />
 
        <Banner />
        <div className='flex flex-col gap-10'>

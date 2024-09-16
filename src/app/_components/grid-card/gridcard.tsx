@@ -26,7 +26,7 @@ const GridCards = ({ data }: { data: GridCardData[] }) => {
                 />
               </div>
               <div className="p-4 flex flex-col items-start gap-3 h-[30%]">
-                <p className="text-lg font-semibold leading-6 truncate w-full">
+                <p className="text-xl hh font-bold leading-6 truncate w-full">
                   {title}
                 </p>
                 <p className="text-md font-semibold text-blue-500">

@@ -47,21 +47,21 @@ const Items = ({ isOpen, closeMenu }: ItemsProps) => {
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 onClick={handleLinkClick}
               >
-                Villa Type
+                Villa Price Calculator
               </Link>
               <Link
                 href="/tools/flat"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 onClick={handleLinkClick}
               >
-                Flat Type
+                Flat Price Calculator
               </Link>
               <Link
                 href="/tools/house"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 onClick={handleLinkClick}
               >
-                House Type
+                House Price Calculator
               </Link>
             </div>
           </div>

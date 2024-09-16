@@ -22,7 +22,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto">
+    <div className="relative w-full max-w-4xl mx-auto">
       <div className="relative h-[500px] w-full">
         <Image
           src={`/articleassets/allproperties/${images[currentIndex]}`}
